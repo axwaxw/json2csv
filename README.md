@@ -51,9 +51,30 @@ See http://docs.meteor.com/#find and http://docs.meteor.com/#fetch for details o
   // or return part of a Meteor collection
   var csv = json2csv(Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch(), true, true)
   
-  // .. and download as a csv (there are better ways to do this...)
-  window.open("data:text/csv;charset=utf-8," + escape(csv))
 ```
+You could use this to add a 'download' button to a template as follows
+
+#### HTML (using Bootstrap)
+
+```html
+  <a href="#" class="btn btn-default" role="button" id="download">Download</a>
+```
+
+#### javaScript
+
+```js
+  Template.orders.events({
+    'click #download': function (e) {       
+      csv = json2csv(Orders.find().fetch(), true, true)     
+      e.target.href = "data:text/csv;charset=utf-8," + escape(csv) 
+      e.target.download = "orders.csv";    
+    }
+  });
+```
+## Limitations
+
+This is only intended for 'flat' files so you should filter collections accordingly.
+
 ## Credits
 
 json2csv is based substantially on Joseph Sturtevant's [fiddle](http://jsfiddle.net/sturtevant/vUnF9/), which was in turn based on Zachary's [stackoverflow answer](http://stackoverflow.com/questions/4130849/convert-json-format-to-csv-format-for-ms-excel/4130939#4130939)
