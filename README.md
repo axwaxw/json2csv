@@ -17,7 +17,10 @@ json2csv takes three arguments:   **json2csv(_array_, _headings_, _quotes_)**
  
  ```js
  // a simple array
- [{firstname: "Alex", lastname: "Webster"}, {firstname: "Jeff", lastname: "Wode"}]
+ [
+   {firstname: "Alex", lastname: "Webster"},
+   {firstname: "Jeff", lastname: "Wode"}
+ ]
  
  // a Meteor collection
  Names.find().fetch()
