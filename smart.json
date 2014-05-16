@@ -1,0 +1,10 @@
+{
+  "name": "json2csv",
+  "description": "convert json or a collection to csv",
+  "homepage": "https://github.com/axwaxw/json2csv",
+  "author": "Alex Webster <alex@alexwebster.com>",
+  "version": "0.1.0",
+  "git": "https://github.com/axwaxw/json2csv",
+  "packages": {
+  }
+}
