@@ -45,7 +45,10 @@ See http://docs.meteor.com/#find and http://docs.meteor.com/#fetch for details o
 ```js
 
   // simply covert an array
-  var array = [{firstname: "Alex", lastname: "Webster"}, {firstname: "Jeff", lastname: "Wode"}]
+  var array = [
+    {firstname: "Alex", lastname: "Webster"}
+    {firstname: "Jeff", lastname: "Wode"}
+  ]
   var csv = json2csv(array, true, false)
   
   // or return an entire Meteor collection
