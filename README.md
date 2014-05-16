@@ -9,9 +9,9 @@ json2csv allows you to generate a csv file from an array or a [Meteor collection
 
 ## Use
 
-json2csv takes three arguments
+json2csv takes three arguments *json2csv(array, headings, quotes)*
 
-### array  -  *[array] or [function]*
+#### array  -  *[array] or [function]*
  
  This could be any array, or a function that returns an array such as Meteor's *collection*.find()fetch() function
  
@@ -26,11 +26,11 @@ json2csv takes three arguments
  Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch()
  ```
  
-### headings  -  *[boolean]*
+#### headings  -  *[boolean]*
   
 Whether or not to include a header line of field names in the csv
  
-### quotes  -  *[boolean]*
+#### quotes  -  *[boolean]*
  
 Whether or not to wrap csv values in double quotation marks ""
 
@@ -81,10 +81,8 @@ json2csv is based substantially on Joseph Sturtevant's [fiddle](http://jsfiddle.
 
 ## Install
 
-Use [meteorite](http://oortcloud.github.com/meteorite/):
+With [Meteorite](https://github.com/oortcloud/meteorite) installed:
 
-Then add via:
-
-```bash
-mrt add json2csv
+```sh
+$ mrt add json2csv
 ```
