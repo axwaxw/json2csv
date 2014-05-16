@@ -9,11 +9,11 @@ json2csv allows you to generate a csv file from an array or a [Meteor collection
 
 ## Use
 
-json2csv takes three arguments *json2csv(array, headings, quotes)*
+json2csv takes three arguments:   **json2csv(_array_, _headings_, _quotes_)**
 
 #### array  -  *[array] or [function]*
  
- This could be any array, or a function that returns an array such as Meteor's *collection*.find()fetch() function
+ This could be any array, or a function that returns an array, such as Meteor's **_collection_.find()fetch()** function
  
  ```js
  // a simple array
