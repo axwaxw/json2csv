@@ -3,15 +3,15 @@ json2csv
 
 ## What Does This Do?
 
-json2csv allows you to generate a csv file from an array or a Meteor collection.  This is useful for quick-and-dirty import/export or for spreading data in excel.
+This is a package for [Meteor](https://www.meteor.com/)
+
+json2csv allows you to generate a csv file from an array or a [Meteor collection](http://docs.meteor.com/#collections).  This is useful for quick-and-dirty import/export or for spreading data in excel.
 
 ## Use
 
 json2csv takes three arguments
 
-### array
- 
- *[array] or [function]*
+### array  -  *[array] or [function]*
  
  This could be any array, or a function that returns an array such as Meteor's *collection*.find()fetch() function
  
@@ -21,17 +21,15 @@ json2csv takes three arguments
  Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch()
  ```
  
- ### headings
+### headings  -  *[boolean]*
+  
+Whether or not to include a header line of field names in the csv
  
- *[boolean]*
+### quotes  -  *[boolean]*
  
- whether or not to include a header line of field names in the csv
- 
- ### quotes
- 
- *[boolean]*
- 
- whether or not to wrap csv values in double quotation marks ""
+Whether or not to wrap csv values in double quotation marks ""
+
+## References
 
 See http://docs.meteor.com/#find and http://docs.meteor.com/#fetch for details on Meteor's collection.find().fetch() functions
 
@@ -44,11 +42,11 @@ See http://docs.meteor.com/#find and http://docs.meteor.com/#fetch for details o
   
   var csv = json2csv(array, true, false)
   
-  // or return an entire collection
+  // or return an entire Meteor collection
   
   var csv = json2csv(Names.find().fetch(), true, true)
   
-  // or return part of a collection
+  // or return part of a Meteor collection
   
   var csv = json2csv(Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch(), true, true)
 
