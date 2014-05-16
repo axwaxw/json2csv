@@ -9,12 +9,28 @@ json2csv allows you to generate a csv file from an array or a Meteor collection.
 
 json2csv uses Meteor's collection.find().fetch() and takes three arguments:
 
- * array:          [array] or [function] This could be any array, or a function that returns an array such as Meteor's *collection*.find()fetch() function
-                    e.g. [{firstname: "Alex", lastname: "Webster"}, {firstname: "Jeff", lastname: "Wode"}]
-                    e.g. Names.find().fetch()
-                    e.g. Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch()
- * headings:       [boolean] whether or not to include a header line of field names in the csv
- * quotes:         [boolean] whether or not to wrap csv values in double quotation marks ""
+**array**
+ 
+ [array] or [function] 
+ 
+ This could be any array, or a function that returns an array such as Meteor's *collection*.find()fetch() function
+ ```js
+ [{firstname: "Alex", lastname: "Webster"}, {firstname: "Jeff", lastname: "Wode"}]
+ Names.find().fetch()
+ Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch()
+ ```
+ 
+ **headings**
+ 
+ [boolean] 
+ 
+ whether or not to include a header line of field names in the csv
+ 
+ **quotes** 
+ 
+ [boolean] 
+ 
+ whether or not to wrap csv values in double quotation marks ""
 
 See http://docs.meteor.com/#find and http://docs.meteor.com/#fetch for details on Meteor's collection.find().fetch() functions
 
