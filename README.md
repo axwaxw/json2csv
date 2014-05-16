@@ -16,8 +16,13 @@ json2csv takes three arguments
  This could be any array, or a function that returns an array such as Meteor's *collection*.find()fetch() function
  
  ```js
+ // a simple array
  [{firstname: "Alex", lastname: "Webster"}, {firstname: "Jeff", lastname: "Wode"}]
+ 
+ // a Meteor collection
  Names.find().fetch()
+ 
+ // part of a Meteor collection
  Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch()
  ```
  
@@ -37,19 +42,16 @@ See http://docs.meteor.com/#find and http://docs.meteor.com/#fetch for details o
 ```js
 
   // simply covert an array
-   
   var array = [{firstname: "Alex", lastname: "Webster"}, {firstname: "Jeff", lastname: "Wode"}]
-  
   var csv = json2csv(array, true, false)
   
   // or return an entire Meteor collection
-  
   var csv = json2csv(Names.find().fetch(), true, true)
   
   // or return part of a Meteor collection
-  
   var csv = json2csv(Names.find({firstname: "Alex"}, {sort: {lastname: -1}}).fetch(), true, true)
-
+  
+  // .. and download as a csv (there are better ways to do this...)
   window.open("data:text/csv;charset=utf-8," + escape(csv))
 ```
 ## Credits
